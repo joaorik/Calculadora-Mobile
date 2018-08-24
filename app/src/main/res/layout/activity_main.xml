@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <Button
+        android:id="@+id/adicao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onOperator"
+        android:text="+"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="393dp" />
+
+    <Button
+        android:id="@+id/subtracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onOperator"
+        android:text="-"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <Button
+        android:id="@+id/multiplicacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onOperator"
+        android:text="*"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="281dp" />
+
+    <Button
+        android:id="@+id/equal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onValueOne"
+        android:text="="
+        tools:layout_editor_absoluteX="272dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <Button
+        android:id="@+id/divisao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onOperator"
+        android:text="/"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="233dp" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClear"
+        android:text="Limpar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="232dp" />
+
+    <TextView
+        android:id="@+id/operator"
+        android:layout_width="35dp"
+        android:layout_height="26dp"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+
+    <EditText
+        android:id="@+id/value1"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:labelFor="@+id/value1"
+        android:singleLine="false"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <EditText
+        android:id="@+id/value2"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:labelFor="@+id/value2"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="109dp" />
+
+
+</android.support.constraint.ConstraintLayout>
