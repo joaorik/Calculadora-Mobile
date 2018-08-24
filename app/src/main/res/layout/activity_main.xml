@@ -47,12 +47,12 @@
         android:id="@+id/equal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onResult"
+        android:onClick="onClick"
         android:text="="
         android:textColor="@android:color/holo_red_dark"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteX="41dp"
         tools:layout_editor_absoluteY="430dp" />
 
     <Button
@@ -78,13 +78,13 @@
 
     <TextView
         android:id="@+id/operator"
-        android:layout_width="35dp"
-        android:layout_height="26dp"
+        android:layout_width="55dp"
+        android:layout_height="34dp"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="137dp" />
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="128dp" />
 
 
     <EditText
@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:text="Segundo valor:"
         tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="177dp" />
+        tools:layout_editor_absoluteY="173dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -132,7 +132,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="386dp" />
+        tools:layout_editor_absoluteY="388dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -142,7 +142,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="271dp" />
+        tools:layout_editor_absoluteY="272dp" />
 
     <View
         android:id="@+id/divider"
@@ -158,7 +158,7 @@
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="419dp" />
+        tools:layout_editor_absoluteY="420dp" />
 
     <View
         android:id="@+id/divider3"
@@ -167,6 +167,13 @@
         android:background="?android:attr/listDivider"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="369dp" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="177dp"
+        android:layout_height="47dp"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="430dp" />
 
 
 </android.support.constraint.ConstraintLayout>
