@@ -3,112 +3,86 @@ package net.leocadio.joao.calculadora;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
+/**
+ * Aplicações Mobile
+ * Joao Leocadio - TADS 5 Semestre
+ */
 
 public class MainActivity extends Activity {
 
-    private EditText v1, v2;
-    private TextView operador;
-    private Double result = 0.0;
+    private Button adicao, subtracao, multiplicacao, divisao;
+    private TextView resultado;
+    private EditText value1, value2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        v1 = (EditText)findViewById(R.id.value1);
-        v2 = (EditText)findViewById(R.id.value2);
-        operador = (TextView)findViewById(R.id.operator);
-
-        v1.setText("");
-        v2.setText("");
-        operador.setText("");
+        init();
+        onClear();
     }
 
+    private void init() {
 
-    public void onResult()
+        adicao = (Button)findViewById(R.id.adicao);
+        subtracao = (Button)findViewById(R.id.subtracao);
+        multiplicacao = (Button)findViewById(R.id.multiplicacao);
+        divisao = (Button)findViewById(R.id.divisao);
+
+        value1 = (EditText)findViewById(R.id.value1);
+        value2 = (EditText)findViewById(R.id.value2);
+
+        resultado = (TextView)findViewById(R.id.resultado);
+    }
+
+    public void onClick(View view)
     {
-        if (operador.getText() == "/") {
-            double v11 = Double.parseDouble("" + v1);
-            double v22 = Double.parseDouble("" + v2);
-            divisao(v11, v22);
-        }
+        String num1 = value1.getText().toString();
+        String num2 = value2.getText().toString();
 
-        if (operador.getText() == "+") {
-            double v11 = Double.parseDouble("" + v1);
-            double v22 = Double.parseDouble("" + v2);
-            adisao(v11, v22);
-        }
+        if (num1.length() != 0 && num2.length() != 0) {
 
-        if (operador.getText() == "*") {
-            double v11 = Double.parseDouble("" + v1);
-            double v22 = Double.parseDouble("" + v2);
-            multiplicacao(v11, v22);
-        }
+            switch (view.getId())
+            {
+                case R.id.adicao:
+                    float add = (Float.parseFloat(num1) + Float.parseFloat(num2));
+                    resultado.setText(String.valueOf(add));
+                    onClear();
+                    break;
 
-        if (operador.getText() == "-") {
-            double v11 = Double.parseDouble("" + v1);
-            double v22 = Double.parseDouble("" + v2);
-            subtracao(v11, v22);
-        }
-    }
+                case R.id.subtracao:
+                    float sub = (Float.parseFloat(num1) - Float.parseFloat(num2));
+                    resultado.setText(String.valueOf(sub));
+                    onClear();
+                    break;
 
-    public Double divisao(double v1, double v2) {
-        return v1 / v2;
-    }
+                case R.id.multiplicacao:
+                    float multi = (Float.parseFloat(num1) * Float.parseFloat(num2));
+                    resultado.setText(String.valueOf(multi));
+                    onClear();
+                    break;
 
-    public Double adisao(double v1, double v2) {
-        return v1 + v2;
-    }
-
-    public Double multiplicacao(double v1, double v2) {
-        return v1 * v2;
-    }
-
-    public Double subtracao(double v1, double v2) {
-        return v1 - v2;
-    }
-
-    public void onOperator(View view) {
-
-        switch (view.getId())
-        {
-            case R.id.adicao:
-                operador.setText("+");
-                break;
-
-            case R.id.subtracao:
-                operador.setText("-");
-                break;
-
-            case R.id.multiplicacao:
-                operador.setText("*");
-                break;
-
-            case R.id.divisao:
-                operador.setText("/");
-                break;
-
-            default:
-                operador.setText("");
-                break;
+                case R.id.divisao:
+                    try {
+                        float div = (Float.parseFloat(num1) / Float.parseFloat(num2));
+                        resultado.setText(String.valueOf(div));
+                    } catch (Exception e) {
+                        resultado.setText("Divisao invalida.");
+                    }
+                    onClear();
+                    break;
+            }
+        } else {
+            resultado.setText("Entre com os valores.");
         }
     }
 
-    public void onClear(View view) {
-        switch (view.getId())
-        {
-            case R.id.clear:
-                v1.setText("");
-                v2.setText("");
-                operador.setText("");
-                break;
-
-            default:
-                break;
-        }
+    public void onClear() {
+        value1.setText("");
+        value2.setText("");
     }
 }
