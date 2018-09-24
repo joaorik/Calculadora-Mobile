@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,217 +8,186 @@
     tools:layout_editor_absoluteY="81dp">
 
     <Button
-        android:id="@+id/adicao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="119dp"
-        android:onClick="onClick"
-        android:text="+"
-        android:textColor="@android:color/holo_green_dark"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/divisao"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/subtracao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:onClick="onClick"
-        android:text="-"
-        android:textColor="@android:color/holo_purple"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/multiplicacao"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/multiplicacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClick"
-        android:text="*"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/adicao"
-        app:layout_constraintTop_toTopOf="@+id/adicao" />
-
-    <Button
-        android:id="@+id/divisao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:onClick="onClick"
-        android:text="/"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/adicao"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/clear"
         android:layout_width="75dp"
         android:layout_height="39dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="293dp"
-        android:layout_marginTop="6dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/multiplicacao"
         android:onClick="onClear"
-        android:text="Limpar"
+        android:text="@string/limpar"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <EditText
-        android:id="@+id/value1"
-        android:layout_width="282dp"
-        android:layout_height="39dp"
-        android:layout_marginBottom="74dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="73dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:labelFor="@+id/value1"
-        android:singleLine="false"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/clear" />
-
-    <EditText
-        android:id="@+id/value2"
-        android:layout_width="282dp"
-        android:layout_height="39dp"
-        android:layout_marginBottom="192dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="193dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:labelFor="@+id/value2"
-        app:layout_constraintBottom_toTopOf="@+id/resultado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/clear" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="125dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="7dp"
-        android:layout_marginStart="51dp"
-        android:text="Segundo valor:"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/value2"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="293dp"
+        tools:layout_editor_absoluteY="6dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="118dp"
         android:layout_height="25dp"
-        android:layout_marginBottom="7dp"
-        android:layout_marginStart="51dp"
-        android:text="Primeiro valor:"
+        android:layout_above="@+id/value1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-112dp"
+        android:text="@string/primeiro_valor"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/value1"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <EditText
+        android:id="@+id/value1"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:labelFor="@+id/value1"
+        android:singleLine="false"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="82dp" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="157dp"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="18dp"
-        android:text="Resultado:"
+        android:id="@+id/textView"
+        android:layout_width="125dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/value2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-221dp"
+        android:text="@string/segundo_valor"
         android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="172dp" />
+
+    <EditText
+        android:id="@+id/value2"
+        android:layout_width="282dp"
+        android:layout_height="39dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="221dp"
+        android:ems="10"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:labelFor="@+id/value2"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="241dp"
+        android:background="?android:attr/listDivider"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="308dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="157dp"
-        android:layout_marginStart="158dp"
-        android:text="Operações"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="210dp"
+        android:text="@string/operacoes"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="276dp" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="368dp"
-        android:layout_height="1dp"
-        android:layout_marginBottom="107dp"
-        android:layout_marginTop="107dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="@+id/adicao"
-        app:layout_constraintStart_toEndOf="@+id/adicao"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <Button
+        android:id="@+id/adicao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="147dp"
+        android:layout_marginStart="18dp"
+        android:onClick="onClick"
+        android:text="@string/plus"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <Button
+        android:id="@+id/subtracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/adicao"
+        android:layout_toEndOf="@+id/adicao"
+        android:onClick="onClick"
+        android:text="@string/sub"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <Button
+        android:id="@+id/multiplicacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/adicao"
+        android:layout_toEndOf="@+id/subtracao"
+        android:onClick="onClick"
+        android:text="@string/mult"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <Button
+        android:id="@+id/divisao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/adicao"
+        android:layout_toEndOf="@+id/multiplicacao"
+        android:onClick="onClick"
+        android:text="@string/div"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="316dp" />
+
 
     <View
         android:id="@+id/divider2"
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="122dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/resultado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="415dp" />
 
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="368dp"
-        android:layout_height="1dp"
-        android:layout_marginBottom="60dp"
-        android:layout_marginTop="58dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/resultado"
-        app:layout_constraintEnd_toEndOf="@+id/adicao"
-        app:layout_constraintStart_toEndOf="@+id/adicao"
-        app:layout_constraintTop_toTopOf="@+id/divisao" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="77dp"
+        android:text="@string/resultado"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="396dp" />
 
     <TextView
         android:id="@+id/resultado"
         android:layout_width="177dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginEnd="88dp"
-        android:layout_marginStart="119dp"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-77dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="440dp" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="6dp"
-        android:text="TADS 5 Sem. Joao Leocadio"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/clear"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

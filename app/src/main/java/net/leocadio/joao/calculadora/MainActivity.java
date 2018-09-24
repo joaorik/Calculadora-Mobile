@@ -28,15 +28,15 @@ public class MainActivity extends Activity {
 
     private void init() {
 
-        adicao = (Button)findViewById(R.id.adicao);
-        subtracao = (Button)findViewById(R.id.subtracao);
-        multiplicacao = (Button)findViewById(R.id.multiplicacao);
-        divisao = (Button)findViewById(R.id.divisao);
+        adicao = (Button) findViewById(R.id.adicao);
+        subtracao = (Button) findViewById(R.id.subtracao);
+        multiplicacao = (Button) findViewById(R.id.multiplicacao);
+        divisao = (Button) findViewById(R.id.divisao);
 
-        value1 = (EditText)findViewById(R.id.value1);
-        value2 = (EditText)findViewById(R.id.value2);
+        value1 = (EditText) findViewById(R.id.value1);
+        value2 = (EditText) findViewById(R.id.value2);
 
-        resultado = (TextView)findViewById(R.id.resultado);
+        resultado = (TextView) findViewById(R.id.resultado);
     }
 
     public void onClick(View view)
@@ -85,4 +85,5 @@ public class MainActivity extends Activity {
         value1.setText("");
         value2.setText("");
     }
+
 }

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Calculadora</string>
+    <string name="limpar">Limpar</string>
+    <string name="primeiro_valor">Primeiro valor:</string>
+    <string name="segundo_valor">Segundo valor:</string>
+    <string name="operacoes">Operações</string>
+    <string name="plus">+</string>
+    <string name="sub">-</string>
+    <string name="mult">*</string>
+    <string name="div">/</string>
+    <string name="resultado">Resultado:</string>
 </resources>
